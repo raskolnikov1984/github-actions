@@ -1,0 +1,17 @@
+name: Hello World Workflow
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - aprendiendo-github-actions
+
+jobs:
+  run_hello_world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Run hello_world.py
+        run: python hello_world.py
